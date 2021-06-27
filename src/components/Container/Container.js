@@ -1,32 +1,28 @@
 import React, { } from 'react'
-import { useSelector } from 'react-redux';
-import { Cards, Card, Image, Nome, Preco, Button } from './Container.style';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { addItem } from '../../store/Carrinho';
+import { Cards } from './Container.style';
+import ItemContainer from './ItemContainer';
 
 const Container = () => {
 
+    const dispatch = useDispatch();
+
     // pegar os games no redux
-    const games = useSelector((state) => state.games)
+    const games = useSelector((state) => state.games);
+
+    // adicionar itens ao carrinho
+    function addItemCart(game) {
+        console.log(game.id)
+        dispatch(addItem(game))
+    }
 
     // exibir os produtos
     return (
         <Cards>
             {games.map(game => {
-                const { id, name, price, image } = game
                 return (
-                    <Card key={id}>
-                        <Image>
-                            {/*pegar imagens no assets a partir do endereço informado pelo JSON*/}
-                            <img src={require('../../assets/' + image).default} alt={name} />
-                        </Image>
-                        <Nome>
-                            {name}
-                        </Nome>
-                        <Preco>
-                            R$ {price}
-                        </Preco>
-                        <Button>Colocar no carrinho</Button>
-                    </Card>
+                    <ItemContainer key={game.id} game={game} addItemCart={addItemCart} />
                 )
             })}
         </Cards>

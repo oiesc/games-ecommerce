@@ -57,3 +57,7 @@ export const NavLink = styled(Link)`
         color: #ba8fff;
     }
 `
+
+export const Count = styled.div`
+    margin-left: 5px;
+`

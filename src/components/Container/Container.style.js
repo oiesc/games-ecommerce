@@ -27,7 +27,7 @@ export const Card = styled.div`
     transition: .5s;
     clear: both;
     &:hover{
-        box-shadow: 0 2px 14px 0 #bfbfbf;
+        box-shadow: 0 2px 14px 2px #a1a1a1;
     }
 `
 
@@ -60,7 +60,7 @@ export const Nome = styled.div`
 export const Preco = styled.div`
     position: relative;
     text-align: center;
-    margin: 20px;
+    margin: 10px 0px 20px 0px;
     font-weight: bold;
     font-size: 1.2em;
     color: #f05a28;
@@ -83,11 +83,14 @@ export const Button = styled.div`
     margin: 20px;
     cursor: pointer;
     background: linear-gradient(to right, #f05a28 50%, #6441A5 50%);
-    background-size: 200% 100%;
+    background-size: 300% 100%;
     color: white;
     transition: all 1s ease;
     background-position: right bottom;
     &:hover{
         background-position: left bottom; 
+    }
+    & img {
+        max-height: 80%;
     }
 `
