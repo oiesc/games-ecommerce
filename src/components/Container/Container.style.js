@@ -81,8 +81,10 @@ export const Button = styled.div`
     border-radius: 5px;
     padding: 5px 10px;
     margin: 20px;
-    cursor: pointer;
-    background: linear-gradient(to right, #f05a28 50%, #6441A5 50%);
+    cursor: ${props => props.itemadd ? 'normal' : 'pointer'};
+    background: ${props => props.itemadd
+        ? "#2ECC40"
+        : "linear-gradient(to right, #f05a28 50%, #6441A5 50%)"};
     background-size: 300% 100%;
     color: white;
     transition: all 1s ease;
@@ -91,6 +93,6 @@ export const Button = styled.div`
         background-position: left bottom; 
     }
     & img {
-        max-height: 80%;
+        max-height: 60%;
     }
 `

@@ -16,7 +16,7 @@
   {
     "id": 102,
     "name": "The Witcher III Wild Hunt",
-    "price": 119.5,
+    "price": 119.50,
     "score": 250,
     "image": "the-witcher-iii-wild-hunt.png"
   },
@@ -58,7 +58,7 @@
   {
     "id": 501,
     "name": "Horizon Zero Dawn",
-    "price": 115.8,
+    "price": 115.80,
     "score": 290,
     "image": "horizon-zero-dawn.png"
   }

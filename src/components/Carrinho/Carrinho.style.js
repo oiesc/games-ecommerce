@@ -3,82 +3,94 @@ import styled from 'styled-components';
 // estilo para todos os cards
 export const Cards = styled.div`
     display: grid;
-    grid-gap: 40px;
-    grid-template-columns: repeat(auto-fill, minmax(200px, auto));
     place-items: center;
     justify-content: center;
-    &:before, &after {
-        display: none;
-    }
 `
 
 // estilo individual de cada card
 export const Card = styled.div`
-    position: relative;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
     width: 100%;
-    max-width: 250px;
-    height: 100%;
     justify-content: center;
     border-image-slice: 1;
-    border-radius: 5px;
     background: rgba(255,255,255,0.55);
     border: 1px solid rgba(0,0,0,0.13);
+    border-bottom: none;
     transition: .5s;
-    clear: both;
-    &:hover{
-        box-shadow: 0 2px 14px 2px #a1a1a1;
-    }
 `
 
 // estilo das imagens do card
 export const Image = styled.div`
-    position: relative;
-    width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 20px 0;
-    clear: both;
+    border-top: 1px solid rgba(0,0,0,0.13);
+    border-right: 1px solid rgba(0,0,0,0.13);
+    font-weight: bold;
+    background: ${props => props.header ? '#242526' : 'transparent'};
+    color: ${props => props.header ? '#ddd' : 'inherit'};
     > img {
         max-width: 100%;
-        height: 100%;
+        max-height: 100px;
     }
 `
 
 // estilo do nome do jogo no card
 export const Nome = styled.div`
+    display: flex;
+    justify-content: end;
+    align-items: center;
     position: relative;
-    margin: 0 20px;
-    min-height: 45px;
     text-align: center;
     font-weight: bold;
+    padding: 0 20px;
     color: #6441A5;
-    clear: both;
+    border-top: 1px solid rgba(0,0,0,0.13);
+    border-right: 1px solid ${props => props.header ? 'rgba(255,255,255,0.13)' : 'rgba(0,0,0,0.13)'};
+    background: ${props => props.header ? '#242526' : 'transparent'};
 `
 
 // estilo dos preços de cada card
 export const Preco = styled.div`
-    position: relative;
-    text-align: center;
-    margin: 10px 0px 20px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: bold;
     font-size: 1.2em;
-    color: #f05a28;
-    clear: both;
+    text-align: center;
+    background: ${props => props.header ? '#242526' : 'transparent'};
+    color: ${props => props.header ? '#ddd' : '#f05a28'};
+    border-top: 1px solid rgba(0,0,0,0.13);
+    border-right: 1px solid ${props => props.header ? 'rgba(255,255,255,0.13)' : 'rgba(0,0,0,0.13)'};
+    background: ${props => props.header ? '#242526' : 'transparent'};
 `
 // remover item
 export const Remove = styled.div`
-    cursor: pointer;
-    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: ${props => props.header ? '#ddd' : 'gray'};
+    font-weight: bold;
     text-align: center;
-    margin-bottom: 20px;
+    padding: 0;
+    border-top: 1px solid rgba(0,0,0,0.13);
+    background: ${props => props.header ? '#242526' : 'transparent'};
+    > div {
+        cursor: pointer;
+        transition: .3s;
+    }
+    > div:hover{
+        color: #FF4136;
+    }
 `
 
 // Titulo da pagina
 export const Title = styled.div`
     display: flex;
-    margin-top: -20px;
     margin-bottom: 20px;
+    width: 100%;
     & p {
         font-size: 1.5em;
         margin: 0;
@@ -88,5 +100,118 @@ export const Title = styled.div`
         color: #6441A5;
         margin-right: 5px;
         font-weight: bold;
+    }
+`
+
+// detalhes da compra
+export const Detalhes = styled.div`
+    margin: 0 -1px;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    padding: 0 20px;
+    border: 1px solid rgba(0,0,0,0.13);
+    background: rgba(255,255,255,0.55);
+    width: calc(100% - 40px);
+    > div {
+        > div {
+            margin: 10px 0;
+            display: flex;
+            justify-content: flex-end;
+            align-items: baseline;
+            color: #111;
+            > div {
+                margin-left: 10px;
+                font-size: 1.2em;
+            }
+            
+            > div:first-child {
+                font-weight: bold;
+                color: #2ECC40;
+            }
+        }
+    }
+`
+
+// quantidade de itens
+export const Quantidade = styled.div`
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    border-top: 1px solid rgba(0,0,0,0.13);
+    border-right: 1px solid ${props => props.header ? 'rgba(255,255,255,0.13)' : 'rgba(0,0,0,0.13)'};
+    background: ${props => props.header ? '#242526' : 'transparent'};
+    color: #ddd;
+    padding: 0 10px;
+    > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;;
+        border: 1px solid rgba(0,0,0,0.13);
+        width: 25px;
+        height: 20px;
+        margin: 0 5px;
+        border-radius: 5px;
+        padding-bottom: 7px;
+        background: #6441A5;
+        color: #fff;
+        cursor: pointer;
+        transition: .3s;
+    }
+    > div:hover{
+        background: #f05a28;
+    }
+    > div:nth-child(2) {
+        width: 50px;
+        height: 40px;
+        background: rgba(255,255,255,0.55);
+        color: #6441A5;
+        cursor: unset;
+    }
+`
+
+// estilo do botão de finalizar compra
+export const Button = styled.div`
+    height: 40px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.8em;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 20px;
+    margin-right: 0;
+    max-width: 200px;
+    cursor: pointer;
+    border: ${props => props.finalizar ? 'none' : '1px solid rgba(0,0,0,0.13)'};
+    background: ${props => props.finalizar ?
+        "linear-gradient(to right, #0074D9 50%, #2ECC40 50%)" : "transparent"};
+    background-size: 300% 100%;
+    color: ${props => props.finalizar ? '#fff' : '#6441A5'};
+    transition: all 1s ease;
+    background-position: right bottom;
+    &:hover{
+        background-position: left bottom; 
+        opacity: ${props => props.finalizar ? '0.9' : '1'};
+        color: ${props => props.finalizar ? '#fff' : '#f05a28'};
+    }
+    > a{
+        color: #6441A5;
+        transition: all .3s ease;
+        text-decoration: none;
+    }
+    > a:hover{
+        color: #f05a28;
+    }
+    & img {
+        max-height: 80%;
     }
 `
