@@ -57,3 +57,19 @@ export const NavLink = styled(Link)`
         color: #e80a89;
     }
 `
+export const RightIcons = styled.div`
+    display: flex;
+    margin-right: 15px;
+    user-select: none;
+    > a div:first-child {
+        color: #f05a28;
+    }
+    > a div:last-child {
+        position: absolute;
+        color: white;
+        margin-top: -12px;
+        width: 19px;
+        font-size: 0.8em;
+        font-weight: normal;
+    }
+`

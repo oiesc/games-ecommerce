@@ -193,7 +193,7 @@ export const Button = styled.div`
     margin: 20px;
     margin-right: 0;
     max-width: 200px;
-    cursor: pointer;
+    cursor: ${props => props.finalizar ? 'pointer' : 'normal'};
     border: ${props => props.finalizar ? 'none' : '1px solid rgba(0,0,0,0.13)'};
     background: ${props => props.finalizar ?
         "linear-gradient(to right, #0074D9 50%, #2ECC40 50%)" : "transparent"};
