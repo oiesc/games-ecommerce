@@ -43,7 +43,7 @@ export const Nome = styled.div`
     justify-content: end;
     align-items: center;
     position: relative;
-    text-align: center;
+    text-align: left;
     font-weight: bold;
     padding: 0 20px;
     color: #f05a28;
