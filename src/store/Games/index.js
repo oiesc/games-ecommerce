@@ -1,5 +1,5 @@
 import gamesMock from '../../mocks/products.json';
-const { createSlice } = require('@reduxjs/toolkit');
+const { createSlice,  } = require('@reduxjs/toolkit');
 
 const gamesSlice = createSlice({
 
@@ -9,10 +9,10 @@ const gamesSlice = createSlice({
 
     reducers: {
 
-    },
+    }
 })
 
-export const { getGames } = gamesSlice.actions
+export const { } = gamesSlice.actions
 
 export default gamesSlice.reducer
 

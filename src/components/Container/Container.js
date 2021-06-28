@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { addItem } from '../../store/Carrinho';
-import { Cards } from './Container.style';
+import { Cards, Ordem } from './Container.style';
 import ItemContainer from './ItemContainer';
 import { setDetalhe } from '../../store/Carrinho/detalhes';
 
@@ -9,6 +9,7 @@ const Container = () => {
 
     const dispatch = useDispatch();
 
+    const [order, setOrder] = useState(1);
     // pegar os games no redux
     const games = useSelector((state) => state.games);
     const carrinho = useSelector((state) => state.carrinho);
@@ -32,7 +33,7 @@ const Container = () => {
 
     // adicionar itens aos detalhes do pedido do produto
     function addDetalhe(game) {
-        const { id, price, } = game
+        const { id, price } = game
         dispatch(setDetalhe({ id, price, qtde: 1, partialPrice: price }))
     }
 
@@ -44,13 +45,25 @@ const Container = () => {
 
     // exibir os produtos
     return (
-        <Cards>
-            {games.map(game => {
-                return (
-                    <ItemContainer key={game.id} game={game} addItemCart={addItemCart} />
-                )
-            })}
-        </Cards>
+        <>
+            <Ordem>
+                <div>
+                    <select onChange={e => setOrder(e.target.value)}>
+                        <option value="1">Ordem Alfabética</option>
+                        <option value="2">Menores Preços</option>
+                        <option value="3">Maiores Preços</option>
+                        <option value="4">Melhor Avaliados</option>
+                    </select>
+                </div>
+            </Ordem>
+            <Cards>
+                {games.map(game => {
+                    return (
+                        <ItemContainer key={game.id} game={game} addItemCart={addItemCart} />
+                    )
+                })}
+            </Cards>
+        </>
     )
 }
 

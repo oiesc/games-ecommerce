@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import ArrowDown from '../../assets/arrow-down-icon.svg';
 
 // estilo para todos os cards
 export const Cards = styled.div`
@@ -94,5 +95,40 @@ export const Button = styled.div`
     }
     & img {
         max-height: 60%;
+    }
+`
+
+export const Ordem = styled.div`
+    display: flex;
+    margin-bottom: 25px;
+    justify-content: flex-end;
+    z-index: 10;
+    > div {
+        overflow: hidden;
+    }
+    > div select {
+        border: 1px solid rgba(0,0,0,0.13);
+        width: 180px;
+        height: 40px;
+        padding: 0 10px;
+        background: url(${ArrowDown}) no-repeat right #ddd;
+        -webkit-appearance: none;
+        background-position-x: 160px;
+        color: #6441A5;
+    }
+    > div select:focus{
+        border: 1px solid rgba(0,0,0,0.13);
+        box-shadow: none;
+        outline: none;
+    }
+    > div select::focus-visible {
+        border: 1px solid rgba(0,0,0,0.13);
+        box-shadow: none;
+        outline: none;
+    }
+    > div select option {
+        border: 1px solid rgba(0,0,0,0.13);
+        outline: none;
+        box-shadow: none;
     }
 `
