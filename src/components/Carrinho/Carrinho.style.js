@@ -141,7 +141,6 @@ export const Quantidade = styled.div`
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    font-size: 1.5em;
     border-top: 1px solid rgba(0,0,0,0.13);
     border-right: 1px solid ${props => props.header ? 'rgba(255,255,255,0.13)' : 'rgba(0,0,0,0.13)'};
     background: ${props => props.header ? '#242526' : 'transparent'};
@@ -150,27 +149,31 @@ export const Quantidade = styled.div`
     > div {
         display: flex;
         justify-content: center;
-        align-items: center;;
-        border: 1px solid rgba(0,0,0,0.13);
+        align-items: center;
         width: 25px;
         height: 20px;
         margin: 0 5px;
         border-radius: 5px;
-        padding-bottom: 7px;
-        background: #6441A5;
-        color: #fff;
+        padding-bottom: 6.5px;
+        padding-left: 0.5px;
+        font-size: 1.5em;
+        color: #6441a5;
         cursor: pointer;
         transition: .3s;
+        user-select: none;
+        border: 1px solid rgba(0,0,0,0.13);
     }
     > div:hover{
-        background: #f05a28;
+        color: #f05a28;
     }
     > div:nth-child(2) {
+        padding-bottom: 3px;  
         width: 50px;
         height: 40px;
         background: rgba(255,255,255,0.55);
         color: #6441A5;
         cursor: unset;
+        user-select: auto;
     }
 `
 
