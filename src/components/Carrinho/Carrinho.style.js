@@ -46,7 +46,7 @@ export const Nome = styled.div`
     text-align: center;
     font-weight: bold;
     padding: 0 20px;
-    color: #6441A5;
+    color: #f05a28;
     border-top: 1px solid rgba(0,0,0,0.13);
     border-right: 1px solid ${props => props.header ? 'rgba(255,255,255,0.13)' : 'rgba(0,0,0,0.13)'};
     background: ${props => props.header ? '#242526' : 'transparent'};
@@ -61,7 +61,7 @@ export const Preco = styled.div`
     font-size: 1.2em;
     text-align: center;
     background: ${props => props.header ? '#242526' : 'transparent'};
-    color: ${props => props.header ? '#ddd' : '#f05a28'};
+    color: ${props => props.header ? '#ddd' : '#6441A5'};
     border-top: 1px solid rgba(0,0,0,0.13);
     border-right: 1px solid ${props => props.header ? 'rgba(255,255,255,0.13)' : 'rgba(0,0,0,0.13)'};
     background: ${props => props.header ? '#242526' : 'transparent'};
@@ -128,7 +128,7 @@ export const Detalhes = styled.div`
             
             > div:first-child {
                 font-weight: bold;
-                color: #2ECC40;
+                color: #0074D9;
             }
         }
     }
@@ -157,14 +157,14 @@ export const Quantidade = styled.div`
         padding-bottom: 6.5px;
         padding-left: 0.5px;
         font-size: 1.5em;
-        color: #6441a5;
+        color: #f05a28;
         cursor: pointer;
         transition: .3s;
         user-select: none;
         border: 1px solid rgba(0,0,0,0.13);
     }
     > div:hover{
-        color: #f05a28;
+        color: #6441a5;
     }
     > div:nth-child(2) {
         padding-bottom: 3px;  

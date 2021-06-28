@@ -1,11 +1,11 @@
 import CartIcon from '../../assets/cart-icon.svg';
-import { Card, Image, Nome, Preco, Button } from './Container.style';
+import { Card, Image, Nome, Preco, Button, Score } from './Container.style';
 import React from 'react';
 import { useSelector } from 'react-redux';
 
 const ItemContainer = ({ game, addItemCart }) => {
 
-    const { id, price, name, image } = game;
+    const { id, price, name, image, score } = game;
 
     const carrinho = useSelector((state) => state.carrinho);
 
@@ -40,6 +40,7 @@ const ItemContainer = ({ game, addItemCart }) => {
                     Jogo colocado no carrinho!
                 </Button>
             }
+            <Score><div>Score: {score}</div></Score>
         </Card>
     )
 }

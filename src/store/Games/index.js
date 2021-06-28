@@ -1,5 +1,5 @@
 import gamesMock from '../../mocks/products.json';
-const { createSlice,  } = require('@reduxjs/toolkit');
+const { createSlice, } = require('@reduxjs/toolkit');
 
 const gamesSlice = createSlice({
 
@@ -12,6 +12,7 @@ const gamesSlice = createSlice({
     }
 })
 
+// eslint-disable-next-line no-empty-pattern
 export const { } = gamesSlice.actions
 
 export default gamesSlice.reducer

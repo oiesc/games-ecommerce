@@ -53,7 +53,7 @@ export const Nome = styled.div`
     min-height: 45px;
     text-align: center;
     font-weight: bold;
-    color: #6441A5;
+    color: #f05a28;
     clear: both;
 `
 
@@ -64,8 +64,22 @@ export const Preco = styled.div`
     margin: 10px 0px 20px 0px;
     font-weight: bold;
     font-size: 1.2em;
-    color: #f05a28;
+    color: #6441A5;
     clear: both;
+`
+
+// estilo score
+export const Score = styled.div`
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    z-index: 10;
+    margin-bottom: 10px;
+    > div {
+        font-size: 0.8em;
+        font-weight: bold;
+        color: gray;
+    }
 `
 
 // estilo do botão de adicionar ao carrinho
@@ -81,11 +95,11 @@ export const Button = styled.div`
     font-size: 0.8em;
     border-radius: 5px;
     padding: 5px 10px;
-    margin: 20px;
+    margin: 10px 20px;
     cursor: ${props => props.itemadd ? 'normal' : 'pointer'};
     background: ${props => props.itemadd
         ? "#2ECC40"
-        : "linear-gradient(to right, #f05a28 50%, #6441A5 50%)"};
+        : "linear-gradient(to right, #2ECC40 50%, #6441A5 50%)"};
     background-size: 300% 100%;
     color: white;
     transition: all 1s ease;
@@ -97,11 +111,27 @@ export const Button = styled.div`
         max-height: 60%;
     }
 `
+// Titulo da pagina
+export const Title = styled.div`
+    display: flex;
+    margin-bottom: 20px;
+    justify-self: start;
+    & p {
+        font-size: 1.5em;
+        margin: 0;
+        color: #f05a28;
+    }
+    & p:first-child {
+        color: #6441A5;
+        margin-right: 5px;
+        font-weight: bold;
+    }
+`
 
 export const Ordem = styled.div`
     display: flex;
     margin-bottom: 25px;
-    justify-content: flex-end;
+    justify-self: end;
     z-index: 10;
     > div {
         overflow: hidden;

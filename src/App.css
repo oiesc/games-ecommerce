@@ -1,11 +1,12 @@
 body {
     background: #ededed;
 }
+
 .main {
     position: relative;
     margin-left: 280px;
     margin-top: 65px;
-    margin-bottom: 50px;
+    margin-bottom: 15px;
     padding: 40px;
     overflow-x: hidden;
 }
