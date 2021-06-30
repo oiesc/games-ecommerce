@@ -13,8 +13,8 @@ function App() {
       <LeftNavbar />
       <div className="main">
         <Switch>
-          <Route exact path="/" component={Container} />
-          <Route path="/meu-carrinho" component={Carrinho} />
+          <Route path="/" exact component={Container} />
+          <Route path="/carrinho" exact component={Carrinho} />
         </Switch>
       </div>
     </BrowserRouter>

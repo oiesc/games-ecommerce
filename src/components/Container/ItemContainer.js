@@ -1,6 +1,6 @@
+import React from 'react';
 import CartIcon from '../../assets/cart-icon.svg';
 import { Card, Image, Nome, Preco, Button, Score } from './Container.style';
-import React from 'react';
 import { useSelector } from 'react-redux';
 
 const ItemContainer = ({ game, addItemCart }) => {

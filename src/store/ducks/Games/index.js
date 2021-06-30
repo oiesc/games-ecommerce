@@ -1,4 +1,4 @@
-import gamesMock from '../../mocks/products.json';
+import gamesMock from '../../../mocks/products.json';
 const { createSlice, } = require('@reduxjs/toolkit');
 
 const gamesSlice = createSlice({

@@ -1,13 +1,15 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
-import games from './Games'
-import carrinho from './Carrinho'
-import detalhes from './Carrinho/detalhes';
+import gamesReducer from './ducks/Games'
+import carrinhoReducer from './ducks/Carrinho'
+import detalhesReducer from './ducks/Carrinho/detalhes';
+import handleOrderReducer from './ducks/OrderItems';
 
 // redux
 const reducer = combineReducers({
-    games: games,
-    carrinho: carrinho,
-    detalhes: detalhes,
+    games: gamesReducer,
+    carrinho: carrinhoReducer,
+    detalhes: detalhesReducer,
+    handleOrder: handleOrderReducer,
 });
 
 const store = configureStore({

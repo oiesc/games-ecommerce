@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addItem } from '../../store/Carrinho';
+import { addItem } from '../../store/ducks/Carrinho';
 import { Title, Cards, Ordem } from './Container.style';
 import ItemContainer from './ItemContainer';
-import { setDetalhe } from '../../store/Carrinho/detalhes';
+import { setDetalhe } from '../../store/ducks/Carrinho/detalhes';
+import { handleOrder } from '../../store/ducks/OrderItems';
 
 const Container = () => {
 
@@ -12,10 +13,11 @@ const Container = () => {
     // pegar os games no redux
     const games = useSelector((state) => state.games);
     const carrinho = useSelector((state) => state.carrinho);
+    // alterar ordem dos itens
+    const itemsOrder = useSelector((state) => state.handleOrder);
 
     // organizar itens ordenados
-    const [order, setOrder] = useState(1);
-    const [sorted, setSorted] = useState(games);
+    const [sorted, setSorted] = useState('');
 
     // adicionar itens ao carrinho
     function addItemCart(game) {
@@ -79,9 +81,9 @@ const Container = () => {
 
     // mudar ordem dos itens
     useEffect(() => {
-        ordenarItens(Number(order))
+        ordenarItens(itemsOrder.handleOrder)
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [order])
+    }, [itemsOrder])
 
     // exibir os produtos
     return (
@@ -91,7 +93,7 @@ const Container = () => {
 
                 <Ordem>
                     <div>
-                        <select onChange={e => setOrder(e.target.value)}>
+                        <select value={itemsOrder.handleOrder} onChange={e => dispatch(handleOrder(Number(e.target.value)))}>
                             <option value="1">Ordem Alfabética</option>
                             <option value="2">Menores Preços</option>
                             <option value="3">Maiores Preços</option>
@@ -101,7 +103,7 @@ const Container = () => {
                 </Ordem>
             </div>
             <Cards>
-                {sorted.map(game => {
+                {sorted && sorted.map(game => {
                     return (
                         <ItemContainer key={game.id} game={game} addItemCart={addItemCart} />
                     )

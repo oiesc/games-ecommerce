@@ -15,7 +15,7 @@ const Header = () => {
                 </NavLink>
             </Logo>
             <RightIcons>
-                <NavLink exact to="/meu-carrinho">
+                <NavLink exact to="/carrinho">
                     <div>
                         <ShoppingCartIcon style={{ fontSize: '2em' }} />
                     </div>

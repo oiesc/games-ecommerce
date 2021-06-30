@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeItem } from '../../store/Carrinho';
+import { removeItem } from '../../store/ducks/Carrinho';
 import ItemCarrinho from './ItemCarrinho';
 import CheckIcon from '@material-ui/icons/Check';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
@@ -25,7 +25,7 @@ import {
     calculaSubTotal,
     adicionarItem,
     removerItem
-} from '../../store/Carrinho/detalhes';
+} from '../../store/ducks/Carrinho/detalhes';
 
 const Carrinho = () => {
 

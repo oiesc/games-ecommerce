@@ -12,7 +12,7 @@ function LeftNavbar() {
             <Menu>
                 <ul>
                     <li><NavLink exact to="/">Loja</NavLink></li>
-                    <li><NavLink exact to="/meu-carrinho">Meu Carrinho<Count>({length})</Count></NavLink></li>
+                    <li><NavLink exact to="/carrinho">Meu Carrinho<Count>({length})</Count></NavLink></li>
                 </ul>
             </Menu>
         </Wrapper>
