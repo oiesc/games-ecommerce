@@ -164,9 +164,6 @@ export const Quantidade = styled.section`
     color: #ddd;
     padding: 0 10px;
     > div {
-       
-    }
-    > div:nth-child(2) {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -180,7 +177,7 @@ export const Quantidade = styled.section`
         padding-bottom: 3px;  
         margin: 0 5px;
         width: 50px;
-        height: 40px;
+        height: 47px;
         background: rgba(255,255,255,0.55);
         color: #6441A5;
         cursor: unset;
