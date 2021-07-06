@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { NavLink as Link } from 'react-router-dom';
 
 // estilo da barra de menu lateral
-export const Wrapper = styled.div`
+export const Wrapper = styled.aside`
     position: fixed;
     width: 280px;
     top: 65px;
@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
 `
 
 // estilo do menu na barra lateral
-export const Menu = styled.div`
+export const Menu = styled.nav`
     > ul {
         width: 100%;
         padding: 0;

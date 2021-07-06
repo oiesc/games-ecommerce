@@ -1,6 +1,8 @@
 import React from 'react';
 import { Image, Nome, Preco, Remove, Quantidade } from './Carrinho.style';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import AddIcon from '@material-ui/icons/Add';
+import RemoveIcon from '@material-ui/icons/Remove';
 
 const ItemCarrinho = ({ item, removeItemCart, detalhes, handleQtde }) => {
 
@@ -9,12 +11,14 @@ const ItemCarrinho = ({ item, removeItemCart, detalhes, handleQtde }) => {
         <>
             <Image>
                 {/*pegar imagens no assets a partir do endereço informado pelo JSON*/}
-                <img src={require('../../assets/' + image).default} alt={name} />
+                <figure><img src={require('../../assets/' + image).default} alt={name} /></figure>
             </Image>
-            <Nome> {name} </Nome>
-            <Preco> R$ {price.toFixed(2)} </Preco>
+            <Nome> <h1>{name}</h1> </Nome>
+            <Preco> <h2>R$ {price.toFixed(2)}</h2> </Preco>
             <Quantidade>
-                <div onClick={() => handleQtde(-1, id)}>-</div>
+                <button onClick={() => handleQtde(-1, id)}>
+                    <RemoveIcon style={{ fontSize: '1.5em' }} />
+                </button>
                 <div>
                     {
                         detalhes.map(item => {
@@ -24,18 +28,20 @@ const ItemCarrinho = ({ item, removeItemCart, detalhes, handleQtde }) => {
                         })
                     }
                 </div>
-                <div onClick={() => handleQtde(1, id)}>+</div>
+                <button onClick={() => handleQtde(1, id)}>
+                    <AddIcon style={{ fontSize: '1.5em' }} />
+                </button>
             </Quantidade>
-            <Preco>
+            <Preco> <h2>
                 {
                     detalhes.map(item => {
                         if (id !== item.id)
                             return null
-                        return (item.partialPrice.toFixed(2))
+                        return (`R$ ${item.partialPrice.toFixed(2)}`)
                     })
                 }
-            </Preco>
-            <Remove><div onClick={() => removeItemCart(item)}><DeleteForeverIcon style={{ fontSize: '2em' }} /></div></Remove>
+            </h2> </Preco>
+            <Remove><button onClick={() => removeItemCart(item)}><DeleteForeverIcon style={{ fontSize: '2em' }} /></button></Remove>
         </>
     )
 }

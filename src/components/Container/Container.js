@@ -87,9 +87,9 @@ const Container = () => {
 
     // exibir os produtos
     return (
-        <>
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <Title><p>Jogos Disponíveis</p></Title>
+        <article>
+            <header style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <Title><h1>Jogos Disponíveis</h1></Title>
 
                 <Ordem>
                     <div>
@@ -101,7 +101,7 @@ const Container = () => {
                         </select>
                     </div>
                 </Ordem>
-            </div>
+            </header>
             <Cards>
                 {sorted && sorted.map(game => {
                     return (
@@ -109,7 +109,7 @@ const Container = () => {
                     )
                 })}
             </Cards>
-        </>
+        </article>
     )
 }
 export default Container

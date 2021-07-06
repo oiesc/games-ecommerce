@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import ArrowDown from '../../assets/arrow-down-icon.svg';
 
 // estilo para todos os cards
-export const Cards = styled.div`
+export const Cards = styled.section`
     display: grid;
     grid-gap: 40px;
     grid-template-columns: repeat(auto-fill, minmax(200px, auto));
@@ -14,7 +14,7 @@ export const Cards = styled.div`
 `
 
 // estilo individual de cada card
-export const Card = styled.div`
+export const Card = styled.article`
     position: relative;
     flex-wrap: wrap;
     width: 100%;
@@ -33,12 +33,13 @@ export const Card = styled.div`
 `
 
 // estilo das imagens do card
-export const Image = styled.div`
+export const Image = styled.figure`
     position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
     padding: 20px 0;
+    margin: 0;
     clear: both;
     > img {
         max-width: 100%;
@@ -47,7 +48,7 @@ export const Image = styled.div`
 `
 
 // estilo do nome do jogo no card
-export const Nome = styled.div`
+export const Nome = styled.h1`
     position: relative;
     margin: 0 20px;
     min-height: 45px;
@@ -58,7 +59,7 @@ export const Nome = styled.div`
 `
 
 // estilo dos preços de cada card
-export const Preco = styled.div`
+export const Preco = styled.h2`
     position: relative;
     text-align: center;
     margin: 10px 0px 20px 0px;
@@ -69,22 +70,22 @@ export const Preco = styled.div`
 `
 
 // estilo score
-export const Score = styled.div`
+export const Score = styled.p`
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
     z-index: 10;
-    margin-bottom: 10px;
-    > div {
-        font-size: 0.8em;
-        font-weight: bold;
-        color: gray;
-    }
+    margin: 0 0 10px 0;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: gray;
 `
 
 // estilo do botão de adicionar ao carrinho
-export const Button = styled.div`
-    height: 40px;
+export const Button = styled.button`
+    font-family: inherit;
+    height: 50px;
+    border: none;
     position: relative;
     display: flex;
     align-items: center;
@@ -116,12 +117,12 @@ export const Title = styled.div`
     display: flex;
     margin-bottom: 20px;
     justify-self: start;
-    & p {
+    & h1 {
         font-size: 1.5em;
         margin: 0;
         color: #f05a28;
     }
-    & p:first-child {
+    & h1:first-child {
         color: #6441A5;
         margin-right: 5px;
         font-weight: bold;

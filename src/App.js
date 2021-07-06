@@ -11,12 +11,12 @@ function App() {
     <BrowserRouter>
       <Header />
       <LeftNavbar />
-      <div className="main">
+      <main>
         <Switch>
           <Route path="/" exact component={Container} />
           <Route path="/carrinho" exact component={Carrinho} />
         </Switch>
-      </div>
+      </main>
     </BrowserRouter>
   );
 }

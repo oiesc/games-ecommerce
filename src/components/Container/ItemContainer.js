@@ -40,7 +40,7 @@ const ItemContainer = ({ game, addItemCart }) => {
                     Jogo colocado no carrinho!
                 </Button>
             }
-            <Score><div>Score: {score}</div></Score>
+            <Score>Score: {score}</Score>
         </Card>
     )
 }

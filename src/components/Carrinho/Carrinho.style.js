@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 // estilo para todos os cards
-export const Cards = styled.div`
+export const Cards = styled.section`
     display: grid;
     place-items: center;
     justify-content: center;
 `
 
 // estilo individual de cada card
-export const Card = styled.div`
+export const Card = styled.article`
     display: grid;
     grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
     width: 100%;
@@ -21,7 +21,7 @@ export const Card = styled.div`
 `
 
 // estilo das imagens do card
-export const Image = styled.div`
+export const Image = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,14 +31,17 @@ export const Image = styled.div`
     font-weight: bold;
     background: ${props => props.header ? '#242526' : 'transparent'};
     color: ${props => props.header ? '#ddd' : 'inherit'};
-    > img {
+    > figure {
+        margin: 0;
+        > img {
         max-width: 100%;
         max-height: 100px;
+        }
     }
 `
 
 // estilo do nome do jogo no card
-export const Nome = styled.div`
+export const Nome = styled.section`
     display: flex;
     justify-content: end;
     align-items: center;
@@ -50,10 +53,13 @@ export const Nome = styled.div`
     border-top: 1px solid rgba(0,0,0,0.13);
     border-right: 1px solid ${props => props.header ? 'rgba(255,255,255,0.13)' : 'rgba(0,0,0,0.13)'};
     background: ${props => props.header ? '#242526' : 'transparent'};
+    & h1 {
+        margin: 0;
+    }
 `
 
 // estilo dos preços de cada card
-export const Preco = styled.div`
+export const Preco = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,9 +71,13 @@ export const Preco = styled.div`
     border-top: 1px solid rgba(0,0,0,0.13);
     border-right: 1px solid ${props => props.header ? 'rgba(255,255,255,0.13)' : 'rgba(0,0,0,0.13)'};
     background: ${props => props.header ? '#242526' : 'transparent'};
+    & h2 {
+        font-size: 1em;
+        margin: 0;
+    }
 `
 // remover item
-export const Remove = styled.div`
+export const Remove = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,19 +94,26 @@ export const Remove = styled.div`
     > div:hover{
         color: #FF4136;
     }
+    & button {
+        border: none;
+        cursor: pointer;
+        background: transparent;
+        margin: 0;
+        padding: 0;
+    }
 `
 
 // Titulo da pagina
-export const Title = styled.div`
+export const Title = styled.header`
     display: flex;
     margin-bottom: 20px;
     width: 100%;
-    & p {
+    & h1 {
         font-size: 1.5em;
         margin: 0;
         color: #f05a28;
     }
-    & p:first-child {
+    & h1:first-child {
         color: #6441A5;
         margin-right: 5px;
         font-weight: bold;
@@ -104,7 +121,7 @@ export const Title = styled.div`
 `
 
 // detalhes da compra
-export const Detalhes = styled.div`
+export const Detalhes = styled.section`
     margin: 0 -1px;
     position: relative;
     display: flex;
@@ -135,7 +152,7 @@ export const Detalhes = styled.div`
 `
 
 // quantidade de itens
-export const Quantidade = styled.div`
+export const Quantidade = styled.section`
     position: relative;
     display: flex;
     justify-content: center;
@@ -147,27 +164,21 @@ export const Quantidade = styled.div`
     color: #ddd;
     padding: 0 10px;
     > div {
+       
+    }
+    > div:nth-child(2) {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 25px;
-        height: 20px;
-        margin: 0 5px;
-        border-radius: 5px;
-        padding-bottom: 6.5px;
-        padding-left: 0.5px;
         font-size: 1.5em;
         color: #f05a28;
         cursor: pointer;
         transition: .3s;
         user-select: none;
+        border-radius: 5px;
         border: 1px solid rgba(0,0,0,0.13);
-    }
-    > div:hover{
-        color: #6441a5;
-    }
-    > div:nth-child(2) {
         padding-bottom: 3px;  
+        margin: 0 5px;
         width: 50px;
         height: 40px;
         background: rgba(255,255,255,0.55);
@@ -175,11 +186,30 @@ export const Quantidade = styled.div`
         cursor: unset;
         user-select: auto;
     }
+    & button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        width: 30px;
+        height: 30px;
+        margin: 0 5px;
+        border-radius: 5px;
+        color: #f05a28;
+        cursor: pointer;
+        transition: .3s;
+        user-select: none;
+        border: 1px solid rgba(0,0,0,0.13);
+        &:hover{
+        color: #6441a5;
+    }
+    }
 `
 
 // estilo do botão de finalizar compra
-export const Button = styled.div`
-    height: 40px;
+export const Button = styled.button`
+    font-family: inherit;
+    height: 50px;
     position: relative;
     display: flex;
     align-items: center;
@@ -193,7 +223,7 @@ export const Button = styled.div`
     margin: 20px;
     margin-right: 0;
     max-width: 200px;
-    cursor: ${props => props.finalizar ? 'pointer' : 'normal'};
+    cursor: pointer;
     border: ${props => props.finalizar ? 'none' : '1px solid rgba(0,0,0,0.13)'};
     background: ${props => props.finalizar ?
         "linear-gradient(to right, #0074D9 50%, #2ECC40 50%)" : "transparent"};
@@ -205,14 +235,6 @@ export const Button = styled.div`
         background-position: left bottom; 
         opacity: ${props => props.finalizar ? '0.9' : '1'};
         color: ${props => props.finalizar ? '#fff' : '#f05a28'};
-    }
-    > a{
-        color: #6441A5;
-        transition: all .3s ease;
-        text-decoration: none;
-    }
-    > a:hover{
-        color: #f05a28;
     }
     & img {
         max-height: 80%;

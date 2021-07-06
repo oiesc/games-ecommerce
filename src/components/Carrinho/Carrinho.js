@@ -5,7 +5,7 @@ import ItemCarrinho from './ItemCarrinho';
 import CheckIcon from '@material-ui/icons/Check';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import SentimentDissatisfiedIcon from '@material-ui/icons/SentimentDissatisfied';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import {
     Button,
     Cards,
@@ -28,6 +28,9 @@ import {
 } from '../../store/ducks/Carrinho/detalhes';
 
 const Carrinho = () => {
+
+    // redrecionar 
+    const history = useHistory();
 
     const dispatch = useDispatch();
 
@@ -68,9 +71,9 @@ const Carrinho = () => {
     }, [dispatch])
 
     return (
-        <>
+        <article>
             {carrinho.length === 0 ?
-                <div style={{
+                <section style={{
                     width: '100%',
                     height: '100%',
                     display: 'flex',
@@ -80,31 +83,31 @@ const Carrinho = () => {
                     textAlign: 'center',
                     flexWrap: 'wrap',
                 }}>
-                    <div style={{ width: '100%' }}><ShoppingCartIcon style={{
+                    <section style={{ width: '100%' }}><ShoppingCartIcon style={{
                         fontSize: '5em',
                         color: '#6441A5',
                     }} />
-                    </div>
-                    <div style={{
+                    </section>
+                    <section style={{
                         margin: '50px 0',
                         width: '100%',
                         color: '#f05a28',
-                    }}> Você ainda não colocou nenhum jogo no carrinho </div>
-                    <div style={{
+                    }}> Você ainda não colocou nenhum jogo no carrinho </section>
+                    <section style={{
                         width: '100%',
                         color: '#6441A5',
-                    }}><SentimentDissatisfiedIcon style={{ fontSize: '1.5em' }} /></div>
-                </div>
+                    }}><SentimentDissatisfiedIcon style={{ fontSize: '1.5em' }} /></section>
+                </section>
                 :
                 <>
                     <Cards>
                         <Title>
-                            <p> Carrinho de compras</p>
+                            <h1> Carrinho de compras</h1>
                         </Title>
                         <Card>
                             {/* Cabeçalho */}
                             <Image header style={{ border: 'none', fontSize: '0.8em' }}>PRODUTO</Image>
-                            <Nome header style={{ borderTop: 'none' }}></Nome>
+                            <Nome header style={{ borderTop: 'none', height: '100%' }}></Nome>
                             <Preco header style={{ borderTop: 'none', fontSize: '0.8em' }}>PREÇO UNITÁRIO</Preco>
                             <Quantidade header style={{ borderTop: 'none', fontSize: '0.8em' }}>QUANTIDADE</Quantidade>
                             <Preco header style={{ borderTop: 'none', fontSize: '0.8em' }}>SUBTOTAL</Preco>
@@ -120,14 +123,14 @@ const Carrinho = () => {
                             </div>}
                         </Detalhes>
                         {/* Botões - apenas o de voltar para a página inicial tem ação */}
-                        <div style={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
-                            <Button><Link to={"/"}>Continuar Comprando</Link></Button>
+                        <section style={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
+                            <Button onClick={() => history.push('/')}>Continuar Comprando</Button>
                             <Button finalizar style={{ paddingRight: '15px' }}><CheckIcon style={{ fontWeight: 'bold', marginRight: '5px' }} /> Finalizar Compra</Button>
-                        </div>
+                        </section>
                     </Cards>
                 </>
             }
-        </>
+        </article>
     )
 }
 
