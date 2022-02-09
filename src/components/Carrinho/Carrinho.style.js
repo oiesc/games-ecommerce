@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 // estilo para todos os cards
 export const Cards = styled.section`
-    display: grid;
+    /* display: grid; */
     place-items: center;
     justify-content: center;
 `

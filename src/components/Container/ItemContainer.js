@@ -27,7 +27,7 @@ const ItemContainer = ({ game, addItemCart }) => {
         <Card>
             <Image>
                 {/*pegar imagens no assets a partir do endereço informado pelo JSON*/}
-                <img src={require('../../assets/' + image).default} alt={name} />
+                <img src={require('../../assets/' + image)} alt={name} />
             </Image>
             <Nome> {name} </Nome>
             <Preco> R$ {price.toFixed(2)} </Preco>

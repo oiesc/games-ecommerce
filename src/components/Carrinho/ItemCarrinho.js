@@ -11,7 +11,7 @@ const ItemCarrinho = ({ item, removeItemCart, detalhes, handleQtde }) => {
         <>
             <Image>
                 {/*pegar imagens no assets a partir do endereço informado pelo JSON*/}
-                <figure><img src={require('../../assets/' + image).default} alt={name} /></figure>
+                <figure><img src={require('../../assets/' + image)} alt={name} /></figure>
             </Image>
             <Nome> <h1>{name}</h1> </Nome>
             <Preco> <h2>R$ {price.toFixed(2)}</h2> </Preco>
