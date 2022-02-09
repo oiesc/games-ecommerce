@@ -43,7 +43,7 @@ export const Image = styled.section`
 // estilo do nome do jogo no card
 export const Nome = styled.section`
     display: flex;
-    justify-content: end;
+    justify-content: start;
     align-items: center;
     position: relative;
     text-align: left;
