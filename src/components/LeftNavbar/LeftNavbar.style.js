@@ -3,13 +3,18 @@ import { NavLink as Link } from 'react-router-dom';
 
 // estilo da barra de menu lateral
 export const Wrapper = styled.aside`
-    position: fixed;
-    width: 280px;
-    top: 65px;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-    background: #18191a;
+
+    display: none;
+    @media only screen and (min-width: 768px) {
+        display: block;
+        position: fixed;
+        width: 280px;
+        top: 65px;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        background: #18191a;
+    }
 `
 
 // estilo do menu na barra lateral

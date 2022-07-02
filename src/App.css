@@ -3,10 +3,14 @@ body {
 }
 
 main {
-    position: relative;
-    margin-left: 280px;
-    margin-top: 65px;
-    margin-bottom: 15px;
-    padding: 40px;
-    overflow-x: hidden;
+    margin: 100px 40px 0;
+}
+
+@media only screen and (min-width: 768px) {
+    main {
+        position: relative;
+        margin: 65px 0 15px 280px;
+        padding: 40px;
+        overflow-x: hidden;
+    }
 }
