@@ -1,7 +1,6 @@
 import React from 'react'
 import { Wrapper, WrapperIcon, Logo, NavLink, RightIcons } from './Header.style'
 import GamesIcon from '@material-ui/icons/Games';
-import MenuIcon from '@material-ui/icons/Menu';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { useSelector } from 'react-redux';
 import { bool, func } from 'prop-types';
