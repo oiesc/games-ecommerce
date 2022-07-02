@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, Nome, Preco, Remove, Quantidade } from './Carrinho.style';
-import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import Clear from '@material-ui/icons/Clear';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 
@@ -13,8 +13,8 @@ const ItemCarrinho = ({ item, removeItemCart, detalhes, handleQtde }) => {
                 {/*pegar imagens no assets a partir do endereço informado pelo JSON*/}
                 <figure><img src={require('../../assets/' + image)} alt={name} /></figure>
             </Image>
-            <Nome> <h1>{name}</h1> </Nome>
-            <Preco> <h2>R$ {price.toFixed(2)}</h2> </Preco>
+            <Nome style={{ fontSize: '1.5em' }}> <h1>{name}</h1> </Nome>
+            <Preco> <h2 className='mobile'>Total: </h2><h2>R$ {price.toFixed(2)}</h2> </Preco>
             <Quantidade>
                 <button onClick={() => handleQtde(-1, id)}>
                     <RemoveIcon style={{ fontSize: '1.5em' }} />
@@ -32,7 +32,7 @@ const ItemCarrinho = ({ item, removeItemCart, detalhes, handleQtde }) => {
                     <AddIcon style={{ fontSize: '1.5em' }} />
                 </button>
             </Quantidade>
-            <Preco> <h2>
+            <Preco> <h2 className='mobile'>Subtotal: </h2> <h2> 
                 {
                     detalhes.map(item => {
                         if (id !== item.id)
@@ -41,7 +41,7 @@ const ItemCarrinho = ({ item, removeItemCart, detalhes, handleQtde }) => {
                     })
                 }
             </h2> </Preco>
-            <Remove><button onClick={() => removeItemCart(item)}><DeleteForeverIcon style={{ fontSize: '2em' }} /></button></Remove>
+            <Remove><button onClick={() => removeItemCart(item)}><Clear style={{ fontSize: '2em', color: 'red' }} /><p className='mobile'>Remover </p></button></Remove>
         </>
     )
 }

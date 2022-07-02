@@ -10,7 +10,6 @@ export const Cards = styled.section`
 // estilo individual de cada card
 export const Card = styled.article`
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
     width: 100%;
     justify-content: center;
     border-image-slice: 1;
@@ -18,6 +17,10 @@ export const Card = styled.article`
     border: 1px solid rgba(0,0,0,0.13);
     border-bottom: none;
     transition: .5s;
+    grid-template-columns: 1fr;
+    @media only screen and (min-width: 1000px) {
+        grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+    }
 `
 
 // estilo das imagens do card
@@ -35,7 +38,16 @@ export const Image = styled.section`
         margin: 0;
         > img {
         max-width: 100%;
-        max-height: 100px;
+        max-height: 150px;
+        }
+    }
+    @media only screen and (max-width: 1000px) {
+        display: ${props => props.header ? 'none' : 'flex'};;
+        border-right: none;
+        > figure {
+            > img {
+            max-height: 200px;
+            }
         }
     }
 `
@@ -56,6 +68,12 @@ export const Nome = styled.section`
     & h1 {
         margin: 0;
     }
+    @media only screen and (max-width: 1000px) {
+        display: ${props => props.header ? 'none' : 'flex'};;
+        justify-content: center;
+        border: none;
+        margin: 10px 0;
+    }
 `
 
 // estilo dos preços de cada card
@@ -71,9 +89,21 @@ export const Preco = styled.section`
     border-top: 1px solid rgba(0,0,0,0.13);
     border-right: 1px solid ${props => props.header ? 'rgba(255,255,255,0.13)' : 'rgba(0,0,0,0.13)'};
     background: ${props => props.header ? '#242526' : 'transparent'};
+    > .mobile {
+        display: none;
+    }
     & h2 {
         font-size: 1em;
         margin: 0;
+    }
+    @media only screen and (max-width: 1000px) {
+        display: ${props => props.header ? 'none' : 'flex'};;
+        border: none;
+        > .mobile {
+            margin-right: 5px;
+            color: #0074D9;
+            display: block;
+        }
     }
 `
 // remover item
@@ -100,6 +130,27 @@ export const Remove = styled.section`
         background: transparent;
         margin: 0;
         padding: 0;
+        > .mobile {
+            display: none;
+        }
+    }
+   
+    @media only screen and (max-width: 1000px) {
+        display: ${props => props.header ? 'none' : 'flex'};;
+        border: none;
+        margin: 20px;
+        & button {
+            border: 1px solid rgba(0,0,0,0.13);
+            padding: 5px 10px 5px 5px;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            > .mobile {
+                margin: 0;
+                color: red;
+                display: block;
+            }
+        }
     }
 `
 
@@ -122,7 +173,7 @@ export const Title = styled.header`
 
 // detalhes da compra
 export const Detalhes = styled.section`
-    margin: 0 -1px;
+    margin: 0;
     position: relative;
     display: flex;
     justify-content: flex-end;
@@ -198,8 +249,13 @@ export const Quantidade = styled.section`
         user-select: none;
         border: 1px solid rgba(0,0,0,0.13);
         &:hover{
-        color: #6441a5;
+            color: #6441a5;
+        }
     }
+    @media only screen and (max-width: 1000px) {
+        display: ${props => props.header ? 'none' : 'flex'};;
+        border: none;
+        margin: 20px 0;
     }
 `
 

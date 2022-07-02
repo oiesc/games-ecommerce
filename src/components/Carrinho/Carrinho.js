@@ -16,7 +16,7 @@ import {
     Nome,
     Preco,
     Remove,
-    Quantidade
+    Quantidade,
 } from './Carrinho.style';
 import {
     removeDetalhe,
@@ -105,14 +105,12 @@ const Carrinho = () => {
                             <h1> Carrinho de compras</h1>
                         </Title>
                         <Card>
-                            {/* Cabeçalho */}
                             <Image header style={{ border: 'none', fontSize: '0.8em' }}>PRODUTO</Image>
                             <Nome header style={{ borderTop: 'none', height: '100%' }}></Nome>
                             <Preco header style={{ borderTop: 'none', fontSize: '0.8em' }}>PREÇO UNITÁRIO</Preco>
                             <Quantidade header style={{ borderTop: 'none', fontSize: '0.8em' }}>QUANTIDADE</Quantidade>
                             <Preco header style={{ borderTop: 'none', fontSize: '0.8em' }}>SUBTOTAL</Preco>
                             <Remove header style={{ borderTop: 'none', fontSize: '0.8em' }}>REMOVER</Remove>
-                            {/* Fim do Cabeçalho */}
                             {carrinho.map(item => <ItemCarrinho key={item.id} item={item} removeItemCart={removeItemCart} detalhes={detalhes} handleQtde={handleQtde} />)}
                         </Card>
                         <Detalhes>
