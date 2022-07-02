@@ -1,13 +1,20 @@
 import React from 'react'
-import { Wrapper, Logo, NavLink, RightIcons } from './Header.style'
+import { Wrapper, WrapperIcon, Logo, NavLink, RightIcons } from './Header.style'
 import GamesIcon from '@material-ui/icons/Games';
+import MenuIcon from '@material-ui/icons/Menu';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { useSelector } from 'react-redux';
+import { bool, func } from 'prop-types';
 
-const Header = () => {
+const Header = ({ open, setOpen }) => {
     const length = useSelector(state => state.carrinho.length);
     return (
         <Wrapper>
+            <WrapperIcon open={open} onClick={() => setOpen(!open)}>
+                <div></div>
+                <div></div>
+                <div></div>
+            </WrapperIcon>
             <Logo>
                 <NavLink exact to="/">
                     <div><GamesIcon style={{ fontSize: '2em' }} /></div>
@@ -25,5 +32,8 @@ const Header = () => {
         </Wrapper>
     )
 }
-
+Header.propTypes = {
+    open: bool.isRequired,
+    setOpen: func.isRequired,
+};
 export default Header

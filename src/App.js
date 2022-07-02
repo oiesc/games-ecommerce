@@ -7,10 +7,13 @@ import Container from './components/Container';
 import Carrinho from './components/Carrinho';
 
 function App() {
+  // menu 
+  const [open, setOpen] = React.useState(false);
+
   return (
     <BrowserRouter>
-      <Header />
-      <LeftNavbar />
+      <Header open={open} setOpen={setOpen} />
+      <LeftNavbar open={open} setOpen={setOpen}/>
       <main>
         <Switch>
           <Route path="/" exact component={Container} />
